@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvb;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);
+}
+
+.postcard {
+  --book-size: 250px;
+
+  position: absolute;
+  padding: 0;
+  list-style: none;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+  inset-block-start: 50%;
+  inset-inline-start: calc(50% + var(--book-size) / 2);
+  inline-size: var(--book-size);
+  aspect-ratio: 148/210;
+}
+
+.pagination {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(-50%);
+  inset-block-end: 20px;
+  inset-inline-start: 50%;
+}
+
+.pagination button {
+  border: 2px solid transparent;
+  padding: 10px 20px;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #5f0dee;
+  transition: color 0.3s, border 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  border: 2px solid #5f0dee;
+  color: #5f0dee;
+  background-color: #fff;
+}
+
+.cover__title {
+    color: burlywood;
+    text-shadow: 2px 2px black;
+}
+
+.cover__subtitle {
+    text-shadow: 2px 2px black;
+}
+
+.list {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0 0 0 / 0.1);
+  background-color: #fff;
+  transition: transform 1s ease-in-out;
+  transform-origin: left center;
+}
+
+.list.one {
+  z-index: 2;
+}
+
+.page {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.page.front {
+  font-size: 20px;
+  text-align: center;
+  z-index: 1;
+}
+
+.page.back {
+  transform: rotateY(180deg);
+}
+.flower  {
+  width: 240px;
+  height: 340px; 
+}
+
+.cover {
+  display: grid;
+  place-items: center;
+  color: #fff;
+  text-align: center;
+  background-image: url(https://klau.club/uploads/posts/2023-12/1703930549_klau-club-p-oboi-na-rabochii-stol-estetika-tsveti-kras-18.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.animated {
+  transform: rotateY(-180deg);
+}
